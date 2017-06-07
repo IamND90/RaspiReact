@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SerialPort from 'serialport';
+//import SerialPort from 'serialport';
 import logo from './logo.svg';
 import './App.css';
 
@@ -17,7 +17,7 @@ export default class App extends Component {
     this.initSp = this.initSp.bind(this);
     this.sendSp = this.sendSp.bind(this);
   }
-
+/*
   initSp() {
     if( this.state.sp === null ){
       this.state.sp = new SerialPort("/dev/ttyACM0", { baudrate: 115200 });
@@ -42,6 +42,7 @@ export default class App extends Component {
     });
   }
 
+  */
 
   render() {
     return (
