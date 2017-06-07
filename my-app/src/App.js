@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-//import SerialPort from 'serialport';
+import SerialPort from 'serialport';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,38 +8,40 @@ export default class App extends Component {
     super(props);
 
     this.state = {
+        A4: 'unknown',
+        sp: null,
+        dataReceived: [],
 
-      A4: 'unknown'
+    };
 
-    }
-
+    this.initSp = this.initSp.bind(this);
+    this.sendSp = this.sendSp.bind(this);
   }
 
-  /*
   initSp() {
-    if( this.props.sp === null ){
-      this.props.sp = new SerialPort("/dev/ttyACM0", { baudrate: 115200 });
+    if( this.state.sp === null ){
+      this.state.sp = new SerialPort("/dev/ttyACM0", { baudrate: 115200 });
       console.log('Serial Port start!');
-      this.props.sp.on("open", () => {
+      this.state.sp.on("open", () => {
         console.log('open');
-        this.props.sp.write('pins\n');
+        this.state.sp.write('pins\n');
       });
-      this.props.sp.on('data', (data) => {
+      this.state.sp.on('data', (data) => {
         this.props.dataReceived.push(data);
         console.log('data received: ' + data);
       });
     }
   }
   sendSp(data) {
-    if( this.props.sp === null ){
+    if( this.state.sp === null ){
       this.initSp();
     }
-    this.props.sp.write(new Buffer(data + "\n"), function(err, results) {
+    this.state.sp.write(new Buffer(data + "\n"), function(err, results) {
       console.log('err ' + err);
       console.log('results ' + results);
     });
   }
-  */
+
 
   render() {
     return (
