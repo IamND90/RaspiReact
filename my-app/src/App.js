@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-//import ReactHardware, {Led} from 'react-hardware';
+//import ReactHardware from 'react-hardware';
 import { initSp } from './js/PortManager'
 import './App.css';
 

@@ -1,7 +1,7 @@
 /**
  * Created by andreyparamonov on 07.06.17.
  */
-const SerialPort = require("serialport").SerialPort
+const SerialPort = require("browser-serialport").SerialPort
 
 let sp = null ;
 let dataReceived = [];
